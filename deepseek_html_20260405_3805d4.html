@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Top Up Free Fire - ORCHZZ STORE ID</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #270000;
+      color: #FFFFFF;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(0,0,0,0);
+      backdrop-filter: blur(5px);
+      border-bottom: 1px solid rgba(227, 57, 53, 0.3);
+      padding: 12px 16px;
+    }
+
+    .header-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      width: 50%;
+      height: 75px;
+    }
+
+    /* Banner */
+    .banner {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.1);
+    }
+
+    @media (min-width: 640px) {
+      .banner { height: 240px; }
+    }
+    @media (min-width: 768px) {
+      .banner { height: 280px; }
+    }
+
+    /* Feature Box */
+    .feature-box {
+      background: rgba(227, 57, 53, 0.12);
+      backdrop-filter: blur(8px);
+      border-radius: 1rem;
+      padding: 16px;
+      display: flex;
+      justify-content: space-around;
+      max-width: 800px;
+      margin: -32px auto 0;
+      position: relative;
+      z-index: 10;
+      box-shadow: 0 10px 25px -5px rgba(55,0,0,0.5);
+      border: 1px solid rgba(227, 57, 53, 0.25);
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: #FFFFFF;
+    }
+
+    /* Container Utama */
+    .main-container {
+      max-width: 1200px;
+      margin: 24px auto;
+      padding: 0 16px;
+    }
+
+    .grid-2col {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .grid-2col {
+        grid-template-columns: 2fr 1fr;
+      }
+    }
+
+    /* Card Section */
+    .card {
+      background: rgba(49,0,0,0.85));
+      border-radius: 1.25rem;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      box-shadow: 0 8px 20px rgba(35,0,0,0.5);
+      border: 1px solid rgba(227, 57, 53, 0.2);
+    }
+
+    .card-header {
+      background: linear-gradient(135deg, #E53935, #C62828);
+      color: #FFFFFF;
+      padding: 12px 16px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .card-header-number {
+      background: #FFFFFF;
+      color: #E53935;
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    .card-body {
+      padding: 16px;
+    }
+
+    /* Input ID */
+    .input-id {
+      width: 100%;
+      padding: 14px;
+      background: #1a1a1a;
+      border: 1px solid #333333;
+      border-radius: 12px;
+      color: #FFFFFF;
+      font-size: 0.875rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .input-id:focus {
+      border-color: #E53935;
+      box-shadow: 0 0 0 2px rgba(227, 57, 53, 0.2);
+    }
+
+    .input-id::placeholder {
+      color: #666666;
+    }
+
+    /* Grid Nominal */
+    .nominal-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+
+    @media (min-width: 480px) {
+      .nominal-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (min-width: 768px) {
+      .nominal-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .nominal-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    .nominal-btn {
+      background: #1a1a1a;
+      border: 1px solid #333333;
+      border-radius: 12px;
+      padding: 12px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+
+    .nominal-btn:hover {
+      background: #252525;
+      border-color: #E53935;
+      transform: translateY(-2px);
+    }
+
+    .nominal-btn.selected {
+      border-color: #FF7043 !important;
+      background: linear-gradient(135deg, #E53935, #C62828) !important;
+      transform: scale(1.02);
+      box-shadow: 0 4px 12px rgba(227, 57, 53, 0.3);
+    }
+
+    .membership-tag {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: linear-gradient(135deg, #FF7043, #E53935);
+      color: #FFFFFF;
+      font-size: 9px;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 20px;
+      transform: rotate(12deg);
+      z-index: 5;
+    }
+
+    .diamond-icon {
+      width: 28px;
+      height: 28px;
+      margin: 0 auto 4px;
+    }
+
+    .nominal-title {
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+      color: #FFFFFF !important;
+    }
+
+    .nominal-sub {
+      font-size: 0.7rem;
+      color: #AAAAAA !important;
+    }
+
+    .nominal-price {
+      color: #FF7043 !important;
+      font-weight: bold;
+      font-size: 0.75rem;
+      margin-top: 4px;
+    }
+
+    /* Sidebar Ringkasan */
+    .sidebar {
+      background: rgba(37,0,0,0.85);
+      border-radius: 1.25rem;
+      padding: 1rem;
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+      border: 1px solid rgba(227, 57, 53, 0.2);
+    }
+
+    .sidebar-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(227, 57, 53, 0.5);
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #FF7043;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 0.875rem;
+    }
+
+    .summary-label {
+      color: #AAAAAA;
+    }
+
+    .summary-value {
+      font-weight: 500;
+      color: #FFFFFF;
+    }
+
+    .total-row {
+      border-top: 1px solid rgba(227, 57, 53, 0.5);
+      padding-top: 12px;
+      margin-top: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .total-price {
+      color: #FF7043;
+    }
+
+    .btn-bayar {
+      width: 100%;
+      background: linear-gradient(135deg, #E53935, #C62828);
+      color: #FFFFFF;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 12px;
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn-bayar:hover {
+      background: linear-gradient(135deg, #FF7043, #E53935);
+      transform: scale(1.01);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #1c000093);
+      backdrop-filter: blur(12px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #0a0a0a;
+      border-radius: 28px;
+      max-width: 450px;
+      width: 100%;
+      padding: 24px;
+      border: 1px solid rgba(227, 57, 53, 0.3);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .close-modal {
+      font-size: 28px;
+      cursor: pointer;
+      color: #AAAAAA;
+      transition: color 0.2s;
+    }
+
+    .close-modal:hover {
+      color: #FF7043;
+    }
+
+    #qrcode {
+      display: flex;
+      justify-content: center;
+      margin: 16px 0;
+    }
+
+    #qrcode canvas, #qrcode img {
+      background: white;
+      padding: 8px;
+      border-radius: 16px;
+      width: 200px !important;
+      height: 200px !important;
+    }
+
+    .info-box {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid rgba(227, 57, 53, 0.2);
+    }
+
+    .invoice-card {
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 16px;
+      padding: 16px;
+      border-left: 4px solid #FF7043;
+      margin: 16px 0;
+    }
+
+    .status-success {
+      background: rgba(227, 57, 53, 0.15);
+      color: #FF7043;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    hr {
+      border-color: rgba(227, 57, 53, 0.3);
+      margin: 12px 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-yellow {
+      color: #FF7043;
+    }
+
+    .text-green {
+      color: #FF7043;
+    }
+
+    .mb-2 { margin-bottom: 8px; }
+    .mb-3 { margin-bottom: 12px; }
+    .mt-2 { margin-top: 8px; }
+    .mt-3 { margin-top: 12px; }
+    .mt-4 { margin-top: 16px; }
+    .font-bold { font-weight: bold; }
+    .text-sm { font-size: 0.875rem; }
+    .text-xs { font-size: 0.7rem; }
+
+    /* Scrollbar styling */
+    .nominal-grid::-webkit-scrollbar {
+      width: 4px;
+    }
+    .nominal-grid::-webkit-scrollbar-track {
+      background: #1a1a1a;
+      border-radius: 10px;
+    }
+    .nominal-grid::-webkit-scrollbar-thumb {
+      background: #E53935;
+      border-radius: 10px;
+    }
+    
+    /* Loading subtle indicator */
+    .auto-processing {
+      font-size: 0.75rem;
+      color: #FF7043;
+      margin-top: 8px;
+      text-align: center;
+      background: rgba(227, 57, 53, 0.15);
+      padding: 6px 12px;
+      border-radius: 30px;
+      display: inline-block;
+      width: auto;
+    }
+    .processing-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="topup-section">
+    <!-- HEADER -->
+    <div class="header">
+      <div class="header-container">
+        <a href="#" class="logo">
+           <img class="logo" src="https://i.postimg.cc/PrHqH1wv/Tak-berjudul2-20260405171139.png" alt="logo">
+        </a>
+      </div>
+    </div>
+
+    <!-- BANNER -->
+    <img class="banner" src="https://i.postimg.cc/kXDK858j/IMG-20260405-211648.png" alt="Banner">
+
+    <!-- FEATURE -->
+    <div class="feature-box">
+      <div class="feature-item"><span>⚡</span><span>Cepat</span></div>
+      <div class="feature-item"><span>🛡️</span><span>Aman</span></div>
+      <div class="feature-item"><span>🎧</span><span>24/7</span></div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-container">
+      <div class="grid-2col">
+        <!-- Kiri -->
+        <div>
+          <!-- ID Section -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-header-number">1</span>
+              ID Free Fire
+            </div>
+            <div class="card-body">
+              <input type="text" id="userid" class="input-id" placeholder="Contoh: 123456789">
+            </div>
+          </div>
+
+          <!-- Pilih Nominal -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-header-number">2</span>
+              Pilih Nominal / Paket
+            </div>
+            <div class="card-body">
+              <div class="nominal-grid" id="nominal-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kanan - Ringkasan -->
+        <div class="sidebar">
+          <div class="sidebar-title">
+            🛒 Ringkasan Pesanan
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">ID Pemain:</span>
+            <span class="summary-value" id="summary-id">-</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Paket:</span>
+            <span class="summary-value" id="summary-paket">-</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">Jumlah Diamond:</span>
+            <span class="summary-value" id="summary-diamond">-</span>
+          </div>
+          <div class="summary-row total-row">
+            <span>Total:</span>
+            <span class="total-price" id="summary-total">Rp 0</span>
+          </div>
+          <button class="btn-bayar" id="pesan-btn">
+            📱 Bayar dengan QRIS
+          </button>
+          <div class="text-center text-xs" style="color:#666666; margin-top:12px;">✅ Scan QR Code untuk pembayaran</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL QRIS -->
+  <div id="paymentModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="font-bold" style="color:#FF7043;">📱 QRIS Payment</span>
+        <span class="close-modal" id="closeModalBtn">&times;</span>
+      </div>
+
+      <div id="qrPaymentArea">
+        <div class="text-center text-sm" style="color:#AAAAAA;">Scan QR Code berikut untuk membayar</div>
+        <div id="qrcode"></div>
+        <div class="info-box">
+          <div class="summary-row"><span style="color:#AAAAAA;">Total Pembayaran:</span><span class="text-yellow font-bold" id="modal-total">Rp 0</span></div>
+        </div>
+        <div class="info-box">
+          <div class="summary-row"><span style="color:#AAAAAA;">ID Pemain:</span><span style="color:white;" id="modal-userid">-</span></div>
+          <div class="summary-row mt-2"><span style="color:#AAAAAA;">Paket:</span><span style="color:white;" id="modal-paket">-</span></div>
+        </div>
+        <div class="processing-wrapper" id="processingContainer"></div>
+        <div class="text-center text-xs" style="color:#666666; margin-top:12px;">⏳ Memproses pembayaran, mohon tunggu</div>
+      </div>
+
+      <div id="invoiceArea" style="display:none;">
+        <div class="text-center">
+          <div style="background:rgba(227, 57, 53, 0.1); width:64px; height:64px; border-radius:50%; margin:0 auto 12px; display:flex; align-items:center; justify-content:center;">
+            <i class="fas fa-check-circle" style="font-size:36px; color:#FF7043;"></i>
+          </div>
+          <h3 class="text-green" style="font-size:1.3rem; color:#FF7043;">Pembayaran Berhasil!</h3>
+          <div class="invoice-card">
+            <div class="summary-row"><span style="color:#AAAAAA;">STATUS</span><span class="status-success">✓ SUCCESS</span></div>
+            <hr>
+            <div class="summary-row"><span style="color:#AAAAAA;">No. Transaksi</span><span id="invoice-trx" class="text-sm" style="color:white;">-</span></div>
+            <div class="summary-row mt-2"><span style="color:#AAAAAA;">Tanggal</span><span id="invoice-date" style="color:white;">-</span></div>
+            <div class="summary-row mt-2"><span style="color:#AAAAAA;">ID Free Fire</span><span class="text-yellow font-bold" id="invoice-id">-</span></div>
+            <div class="summary-row mt-2"><span style="color:#AAAAAA;">Paket</span><span id="invoice-paket" style="color:white;">-</span></div>
+            <div class="summary-row mt-2"><span style="color:#AAAAAA;">Diamond</span><span id="invoice-diamond" style="color:white;">-</span></div>
+            <hr>
+            <div class="summary-row font-bold"><span style="color:#AAAAAA;">Total Dibayar</span><span class="text-yellow" id="invoice-total">-</span></div>
+          </div>
+          <button id="closeInvoiceBtn" class="btn-bayar" style="margin-top:16px;">
+            🖨️ Cetak / Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Data produk
+    const nominalData = [
+      { type: "membership", name: "Mingguan", price: 21500, diamond: 0, icon: "crown", tag: "BEST+" },
+      { type: "membership", name: "Bulanan", price: 60000, diamond: 0, icon: "crown", tag: "BEST+" },
+      { type: "custom", name: "Custom", price: 198, diamond: 1, icon: "diamond" },
+      { type: "diamond", name: "5", price: 813, diamond: 5 },
+      { type: "diamond", name: "20", price: 3000, diamond: 20 },
+      { type: "diamond", name: "50", price: 7900, diamond: 50 },
+      { type: "diamond", name: "100", price: 15900, diamond: 100 },
+      { type: "diamond", name: "210", price: 31700, diamond: 210 },
+      { type: "diamond", name: "520", price: 63500, diamond: 520 },
+      { type: "diamond", name: "845", price: 95000, diamond: 845 },
+      { type: "diamond", name: "1080", price: 125000, diamond: 1080, bonus: "+ Bonus" },
+      { type: "diamond", name: "2180", price: 245000, diamond: 2180, bonus: "+ Bonus" },
+      { type: "diamond", name: "5600", price: 490000, diamond: 5600, bonus: "+ Bonus Besar" },
+      { type: "diamond", name: "12000", price: 980000, diamond: 12000, bonus: "+ Hadiah Ekstra" },
+      { type: "diamond", name: "18000", price: 1450000, diamond: 18000, bonus: "+ Hadiah Mewah" }
+    ];
+
+    let selectedProduct = { name: "Mingguan", price: 21500, diamond: 0, type: "membership" };
+    let processingTimeout = null;
+
+    // Render nominal buttons
+    const nominalContainer = document.getElementById('nominal-list');
+    nominalData.forEach(item => {
+      const btn = document.createElement('button');
+      btn.className = 'nominal-btn';
+      if (item.name === "Mingguan") btn.classList.add('selected');
+      btn.setAttribute('data-price', item.price);
+      btn.setAttribute('data-diamond', item.diamond);
+      btn.setAttribute('data-type', item.type);
+      btn.setAttribute('data-name', item.name);
+      
+      if (item.type === 'membership') {
+        btn.innerHTML = `
+          <div class="membership-tag">${item.tag}</div>
+          <i class="fas fa-crown" style="color:#FF7043; font-size:24px; margin-bottom:4px;"></i>
+          <div class="nominal-title">${item.name}</div>
+          <div class="nominal-sub">Membership</div>
+          <div class="nominal-price">Rp ${item.price.toLocaleString('id-ID')}</div>
+        `;
+      } else if (item.type === 'custom') {
+        btn.innerHTML = `
+          <img src="https://raw.githubusercontent.com/0xme/ff-resources/refs/heads/main/pngs/300x300/FF_UI_HackerStore_Diamond.png" class="diamond-icon">
+          <div class="nominal-title">Custom</div>
+          <div class="nominal-sub">Isi jumlah sendiri</div>
+          <div class="nominal-price">Rp ${item.price} / dm</div>
+        `;
+      } else {
+        btn.innerHTML = `
+          <img src="https://raw.githubusercontent.com/0xme/ff-resources/refs/heads/main/pngs/300x300/FF_UI_HackerStore_Diamond.png" class="diamond-icon">
+          <div class="nominal-title">${item.name}</div>
+          <div class="nominal-sub">Diamond ${item.bonus || ''}</div>
+          <div class="nominal-price">Rp ${item.price.toLocaleString('id-ID')}</div>
+        `;
+      }
+      
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedProduct = {
+          name: item.name,
+          price: item.price,
+          diamond: item.diamond,
+          type: item.type
+        };
+        updateSummary();
+      });
+      
+      nominalContainer.appendChild(btn);
+    });
+
+    // Custom handler
+    const customBtn = document.querySelector('.nominal-btn[data-type="custom"]');
+    if (customBtn) {
+      customBtn.addEventListener('click', () => {
+        let jml = prompt('Masukkan jumlah Diamond (min 1):', '10');
+        if (jml && !isNaN(jml) && parseInt(jml) > 0) {
+          const jmlInt = parseInt(jml);
+          const total = jmlInt * 198;
+          selectedProduct = {
+            name: `Custom ${jmlInt}`,
+            price: total,
+            diamond: jmlInt,
+            type: 'custom'
+          };
+          customBtn.setAttribute('data-price', total);
+          customBtn.setAttribute('data-diamond', jmlInt);
+          document.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('selected'));
+          customBtn.classList.add('selected');
+          updateSummary();
+        }
+      });
+    }
+
+    function updateSummary() {
+      const userId = document.getElementById('userid').value.trim();
+      document.getElementById('summary-id').innerText = userId || "-";
+      let paketText = selectedProduct.name;
+      if (selectedProduct.type === 'diamond') paketText = `${selectedProduct.diamond} Diamond`;
+      if (selectedProduct.type === 'membership') paketText = `${selectedProduct.name}`;
+      if (selectedProduct.type === 'custom') paketText = `Custom ${selectedProduct.diamond} Diamond`;
+      document.getElementById('summary-paket').innerText = paketText;
+      document.getElementById('summary-diamond').innerText = selectedProduct.diamond > 0 ? selectedProduct.diamond.toLocaleString('id-ID') : (selectedProduct.type === 'membership' ? 'Membership' : '-');
+      document.getElementById('summary-total').innerText = `Rp ${selectedProduct.price.toLocaleString('id-ID')}`;
+    }
+
+    // QR Modal
+    const modal = document.getElementById('paymentModal');
+    const qrArea = document.getElementById('qrPaymentArea');
+    const invoiceAreaDiv = document.getElementById('invoiceArea');
+    let qrInstance = null;
+
+    function generateQR(amount, userId) {
+      const container = document.getElementById('qrcode');
+      container.innerHTML = '';
+      const data = `QRIS://ORCHZZ?amount=${amount}&user=${userId}&time=${Date.now()}`;
+      qrInstance = new QRCode(container, { text: data, width: 200, height: 200 });
+    }
+
+    function startAutoTransitionSilent() {
+      const processingContainer = document.getElementById('processingContainer');
+      if (processingContainer) {
+        processingContainer.innerHTML = `<div class="auto-processing"><i class="fas fa-spinner fa-pulse"></i> Memverifikasi pembayaran...</div>`;
+      }
+      
+      if (processingTimeout) clearTimeout(processingTimeout);
+      
+      processingTimeout = setTimeout(() => {
+        if (processingContainer) processingContainer.innerHTML = '';
+        confirmPayAutomatically();
+      }, 3000);
+    }
+    
+    function confirmPayAutomatically() {
+      if (processingTimeout) {
+        clearTimeout(processingTimeout);
+        processingTimeout = null;
+      }
+      const processingContainer = document.getElementById('processingContainer');
+      if (processingContainer) processingContainer.innerHTML = '';
+      
+      generateInvoice();
+      qrArea.style.display = 'none';
+      invoiceAreaDiv.style.display = 'block';
+    }
+
+    function clearAutoProcess() {
+      if (processingTimeout) {
+        clearTimeout(processingTimeout);
+        processingTimeout = null;
+      }
+      const processingContainer = document.getElementById('processingContainer');
+      if (processingContainer) processingContainer.innerHTML = '';
+    }
+
+    function showModal() {
+      const userId = document.getElementById('userid').value.trim();
+      if (!userId) { alert('Masukkan ID Free Fire!'); return; }
+      if (userId.length < 4) { alert('ID tidak valid!'); return; }
+      
+      clearAutoProcess();
+      
+      let paketNama = selectedProduct.name;
+      if (selectedProduct.type === 'diamond') paketNama = `${selectedProduct.diamond} Diamond`;
+      if (selectedProduct.type === 'membership') paketNama = selectedProduct.name;
+      if (selectedProduct.type === 'custom') paketNama = `Custom ${selectedProduct.diamond} Diamond`;
+      
+      document.getElementById('modal-total').innerText = `Rp ${selectedProduct.price.toLocaleString('id-ID')}`;
+      document.getElementById('modal-userid').innerText = userId;
+      document.getElementById('modal-paket').innerText = paketNama;
+      generateQR(selectedProduct.price, userId);
+      qrArea.style.display = 'block';
+      invoiceAreaDiv.style.display = 'none';
+      modal.classList.add('active');
+      
+      startAutoTransitionSilent();
+    }
+
+    function generateInvoice() {
+      const userId = document.getElementById('userid').value.trim();
+      let paketNama = selectedProduct.name;
+      if (selectedProduct.type === 'diamond') paketNama = `${selectedProduct.diamond} Diamond`;
+      if (selectedProduct.type === 'membership') paketNama = selectedProduct.name;
+      if (selectedProduct.type === 'custom') paketNama = `Custom ${selectedProduct.diamond} Diamond`;
+      
+      const trxId = 'ORCHZ' + Date.now() + Math.floor(Math.random() * 10000);
+      const now = new Date();
+      const dateStr = now.toLocaleString('id-ID');
+      
+      document.getElementById('invoice-trx').innerText = trxId;
+      document.getElementById('invoice-date').innerText = dateStr;
+      document.getElementById('invoice-id').innerText = userId;
+      document.getElementById('invoice-paket').innerText = paketNama;
+      document.getElementById('invoice-diamond').innerText = selectedProduct.diamond > 0 ? selectedProduct.diamond.toLocaleString('id-ID') : (selectedProduct.type === 'membership' ? 'Membership' : '-');
+      document.getElementById('invoice-total').innerText = `Rp ${selectedProduct.price.toLocaleString('id-ID')}`;
+    }
+
+    function closeModal() {
+      clearAutoProcess();
+      modal.classList.remove('active');
+    }
+
+    document.getElementById('pesan-btn').addEventListener('click', showModal);
+    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+    document.getElementById('closeInvoiceBtn').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    
+    document.getElementById('userid').addEventListener('input', updateSummary);
+    updateSummary();
+  </script>
+</body>
+</html>
